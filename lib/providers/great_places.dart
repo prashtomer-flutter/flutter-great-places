@@ -17,6 +17,10 @@ class GreatPlaces with ChangeNotifier {
     ]; // copy of items so that the actual items can not be modified outside the class.
   }
 
+  Place findById(String id) {
+    return _items.firstWhere((place) => place.id == id);
+  }
+
   Future<void> addPlace(
     String pickedTitle,
     File pickedImage,
